@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EL-TECH Kassensystem — Live-Demo</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/pos.css">
+</head>
+<body class="pos-body">
+
+<header>
+  <nav>
+    <a href="index.html" class="logo"><span class="dot"></span>EL-TECH</a>
+    <div class="nav-links">
+      <a href="index.html#leistungen">Leistungen</a>
+      <a href="index.html#preise">Preise</a>
+      <a href="index.html#kontakt">Kontakt</a>
+    </div>
+    <a href="index.html#kontakt" class="nav-cta">Angebot anfragen</a>
+  </nav>
+</header>
+
+<div class="pos-wrap">
+
+  <div class="pos-topbar">
+    <div>
+      <span class="eyebrow">Live-Demo</span>
+      <h1>EL-TECH Kassensystem</h1>
+    </div>
+    <div class="pos-summary">
+      <div class="stat"><b id="dayTotal">0,00 €</b><span>Umsatz heute</span></div>
+      <div class="stat"><b id="dayCount">0</b><span>Verkäufe heute</span></div>
+    </div>
+  </div>
+
+  <div class="pos-grid">
+
+    <div class="pos-products">
+      <div class="pos-panel-head">
+        <h3>Produkte</h3>
+        <button id="addProductBtn" class="btn btn-ghost small">+ Produkt</button>
+      </div>
+      <div id="productGrid" class="product-grid"></div>
+    </div>
+
+    <div class="pos-cart">
+      <div class="pos-panel-head">
+        <h3>Bon</h3>
+        <button id="clearCartBtn" class="btn btn-ghost small">Leeren</button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-total-row">
+        <span>Gesamt</span>
+        <span id="cartTotal">0,00 €</span>
+      </div>
+      <button id="checkoutBtn" class="btn btn-primary full">Bezahlen & Bon drucken</button>
+    </div>
+
+  </div>
+
+  <div id="historyPanel" class="pos-history">
+    <div class="pos-panel-head">
+      <h3>Letzte Verkäufe</h3>
+      <button id="resetDayBtn" class="btn btn-ghost small">Tag zurücksetzen</button>
+    </div>
+    <div id="historyList" class="history-list"></div>
+  </div>
+
+</div>
+
+<div id="productModal" class="modal hidden">
+  <div class="modal-box">
+    <h3>Neues Produkt</h3>
+    <input id="prodName" type="text" placeholder="Name (z.B. Cappuccino)">
+    <input id="prodPrice" type="number" step="0.01" placeholder="Preis in €">
+    <div class="modal-actions">
+      <button id="cancelProdBtn" class="btn btn-ghost">Abbrechen</button>
+      <button id="saveProdBtn" class="btn btn-primary">Speichern</button>
+    </div>
+  </div>
+</div>
+
+<div id="receiptModal" class="modal hidden">
+  <div class="modal-box receipt">
+    <h3>Bon</h3>
+    <div id="receiptContent"></div>
+    <div class="modal-actions">
+      <button id="closeReceiptBtn" class="btn btn-primary full">Schließen</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/kassensystem.js"></script>
+</body>
+</html>
